@@ -1,0 +1,4 @@
+name = Follow HabraPack
+description = <a href="https://github.com/Incwadra/HabraPack">HabraPack</a> icons for module follow
+core = 7.x
+version = "7.x-.1"
