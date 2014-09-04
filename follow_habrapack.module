@@ -2,46 +2,28 @@
 
 function follow_habrapack_follow_icon_styles_alter(&$styles) {
 
-  $styles['follow-habrapack-old'] = array(
-    'name' => 'follow-habrapack-old',
-    'label' => t('HabraPack old'),
-    'css-overrides' => array(
-      'height: 32px;',
-      'line-height: 32px;',
-      'padding-left: 40px;',
-    ),
-    'icon-path' => drupal_get_path('module', 'follow_habrapack') . '/icons/old',
+  $css = array(
+    'height: 32px;',
+    'line-height: 32px;',
+    'padding-left: 40px;',
+    'margin-top: .3em',
   );
+
+  $path_to_me = drupal_get_path('module', 'follow_habrapack');
 
   $styles['follow-habrapack-with-shadow'] = array(
     'name' => 'follow-habrapack-with-shadow',
     'label' => t('HabraPack with shadow'),
-    'css-overrides' => array(
-      'height: 32px;',
-      'line-height: 32px;',
-      'padding-left: 40px;',
-    //  'height: 44px;',
-    //  'line-height: 40px;',
-    //  'padding-left: 41px;',
-    //  'padding-right: 5px;',
-    ),
-    'icon-path' => drupal_get_path('module', 'follow_habrapack') . '/icons/with-shadow',
+    'css-overrides' => $css,
+    'icon-path' => "${path_to_me}/icons/with-shadow",
   );
 
   $styles['follow-habrapack-without-shadow'] = array(
     'name' => 'follow-habrapack-without-shadow',
     'label' => t('HabraPack without shadow'),
-    'css-overrides' => array(
-      'height: 48px;',
-      'width: 48px;',
-      'padding: 0;',
-      //'line-height: 40px;',
-      //'padding-left: 41px;',
-      //'padding-right: 5px;',
-    ),
-    'icon-path' => drupal_get_path('module', 'follow_habrapack') . '/icons/without-shadow',
+    'css-overrides' => $css,
+    'icon-path' => "${path_to_me}/icons/without-shadow",
   );
-
 
 }
 
@@ -56,7 +38,6 @@ function follow_habrapack_follow_networks_alter(&$networks, $uid = 0) {
     'picasa',
     'spiceworks',
     'viadeo',
-    'vimeo',
     'virb',
     'xing',
   );
@@ -64,4 +45,3 @@ function follow_habrapack_follow_networks_alter(&$networks, $uid = 0) {
     unset($networks[$uid][$item]);
   }
 }
-
